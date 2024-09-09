@@ -17,6 +17,7 @@ namespace MangMadu
 
             Draw(x2, y2, sym2);
 
+            
 
         }
 
