@@ -22,8 +22,6 @@ namespace MangMadu
             sym = _sym;
         }
 
-
-
         // Funktsioon joonistussümboli kindlal positsioonil
         public void Draw()
         {

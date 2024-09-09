@@ -1,0 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MangMadu
+{
+    internal class HorizontalLine
+    {
+        // List, et salvestada joont esindavaid punktiobjekte
+        List<Point> pList;
+
+        public HorizontalLine(int xLeft, int xRight, int y, char sym)
+        {
+            pList = new List<Point>();
+            // Korda läbi x-koordinaatide vahemiku
+            for (int x = xLeft; x <= xRight; x++)
+            {
+                Point p = new Point(x, y, sym);
+                pList.Add(p);
+            }
+        }
+
+        // Horisontaalse joone joonistamise funktioon
+        public void Drow()
+        {
+            foreach (Point p in pList)
+            {
+                p.Draw();
+            }
+        }
+    }
+}
