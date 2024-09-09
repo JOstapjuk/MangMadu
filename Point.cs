@@ -13,6 +13,17 @@ namespace MangMadu
         public int y;
         public char sym;
 
+        public Point() {}
+
+        public Point(int _x, int _y, char _sym)
+        {
+            x = _x;
+            y = _y;
+            sym = _sym;
+        }
+
+
+
         // Funktsioon joonistussümboli kindlal positsioonil
         public void Draw()
         {
