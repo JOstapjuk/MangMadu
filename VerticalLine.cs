@@ -6,19 +6,17 @@ using System.Threading.Tasks;
 
 namespace MangMadu
 {
-    internal class HorizontalLine : Figure
+    internal class VerticalLine : Figure
     {
-        // List, et salvestada joont esindavaid punktiobjekte
-
-        public HorizontalLine(int xLeft, int xRight, int y, char sym)
+        public VerticalLine(int yUp, int yDown, int x, char sym)
         {
             pList = new List<Point>();
-            // Korda läbi x-koordinaatide vahemiku
-            for (int x = xLeft; x <= xRight; x++)
+            // Korda läbi y-koordinaatide vahemiku
+            for (int y = yUp; y <= yDown; y++)
             {
                 Point p = new Point(x, y, sym);
                 pList.Add(p);
             }
-        }
+        }      
     }
 }
