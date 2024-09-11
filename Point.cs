@@ -56,5 +56,12 @@ namespace MangMadu
             Console.SetCursorPosition(x, y);
             Console.WriteLine(sym);
         }
+
+        // Puhastab saba punkti kus ta oli
+        public void Clear() 
+        {
+            sym = ' ';
+            Draw();
+        }
     }
 }
