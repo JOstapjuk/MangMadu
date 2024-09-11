@@ -50,6 +50,11 @@ namespace MangMadu
             }
         }
 
+        public bool isHit(Point p)
+        {
+            return p.x == this.x && p.y == this.y;
+        }
+
         // Funktsioon joonistussümboli kindlal positsioonil
         public void Draw()
         {

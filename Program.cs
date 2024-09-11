@@ -26,20 +26,31 @@ namespace MangMadu
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Drow();
 
-            // paneme madu liikuma vajutatud tulistajale suunas
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
+
+            // Tsükkel madudele liikumiseks ja toidu söömiseks
             while (true)
             {
-                if (Console.KeyAvailable) 
+                if (snake.Eat(food))
                 {
-                    ConsoleKeyInfo key = Console.ReadKey(); // loeb infot, millist nuppu (tulistajat) vajutati
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+
+                Thread.Sleep(300);
+
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
                     snake.HandleKey(key.Key);
                 }
-                Thread.Sleep(100); //Thread.Sleep() - viivitus
-                snake.Move();
-            }
-
-                      
-
+            }      
         }
     }
 }
