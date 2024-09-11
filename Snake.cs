@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace MangMadu
 {
@@ -42,6 +43,27 @@ namespace MangMadu
             Point nextPoint = new Point (head);
             nextPoint.Move(1, direction); 
             return nextPoint;
+        }
+
+        // sõltuvalt vajutatud tulistajast valib millisesse suunda madu läheb
+        public void HandleKey(ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+            {
+                direction = Direction.LEFT;
+            }
+            else if (key == ConsoleKey.RightArrow)
+            {
+                direction = Direction.RIGHT;
+            }
+            else if (key == ConsoleKey.UpArrow)
+            {
+                direction = Direction.UP;
+            }
+            else if (key == ConsoleKey.DownArrow)
+            {
+                direction = Direction.DOWN;
+            }
         }
     }
 }
