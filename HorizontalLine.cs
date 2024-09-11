@@ -8,8 +8,6 @@ namespace MangMadu
 {
     internal class HorizontalLine : Figure
     {
-        // List, et salvestada joont esindavaid punktiobjekte
-
         public HorizontalLine(int xLeft, int xRight, int y, char sym)
         {
             pList = new List<Point>();
