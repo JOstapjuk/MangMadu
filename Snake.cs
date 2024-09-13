@@ -45,6 +45,18 @@ namespace MangMadu
             return nextPoint;
         }
 
+        // tingimus, kui sõitis vastu saba
+        internal bool isHitTail()
+        {
+            var head = pList.Last();
+            for (int i = 0; i < pList.Count - 2; i++)
+            {
+                if (head.isHit(pList[i]))
+                    return true;
+            }
+            return false;
+        }
+
         // sõltuvalt vajutatud tulistajast valib millisesse suunda madu läheb
         public void HandleKey(ConsoleKey key)
         {
